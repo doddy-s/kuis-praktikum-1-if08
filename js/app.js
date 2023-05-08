@@ -38,15 +38,6 @@ function backspace() {
   document.getElementById('display').value = displayValue;
 }
 
-function Percentage(perse) {
-  if (displayValue !== '') {
-    const operand = parseFloat(displayValue);
-    const percentage = operand * 0.01;
-    displayValue = percentage.toFixed(2);
-    document.getElementById('display').value = displayValue;
-  }
-}
-
 function evaluateExpression(expression) {
   // Buat regex untuk mencocokkan karakter yang tidak diinginkan
   const invalidCharsRegex = /[^-()\d/*+.]/g;
