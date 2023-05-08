@@ -38,22 +38,14 @@ function backspace() {
   document.getElementById('display').value = displayValue;
 }
 
-function Percentage() {
-  const percentageInput = document.getElementById('percentageInput');
-  const percentage = parseFloat(percentageInput.value);
-
-  if (displayValue !== '' && !isNaN(percentage) && percentage !== 0) {
+function Percentage(perse) {
+  if (displayValue !== '') {
     const operand = parseFloat(displayValue);
-    const result = operand / percentage;
-    displayValue = result.toString();
+    const percentage = operand * 0.01;
+    displayValue = percentage.toFixed(2);
     document.getElementById('display').value = displayValue;
   }
-
-  percentageInput.value = ''; // Mengosongkan input persentase setelah dihitung
-  togglePercentageInput(); // Menyembunyikan input persentase setelah perhitungan
 }
-
-
 
 function evaluateExpression(expression) {
   // Buat regex untuk mencocokkan karakter yang tidak diinginkan
