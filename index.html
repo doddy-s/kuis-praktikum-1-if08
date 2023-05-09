@@ -6,11 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Calculator - Kelompok 1</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Link favicon for logo tab -->
     <link rel="shortcut icon" href="assets/calculator-svgrepo-com.svg" type="image/x-icon">
+
   </head>
   <body>
+    <!-- Container for Calculator Body -->
     <div class="calculator">
+
+      <!-- Dark Mode and Light Mode -->
+      <div class="mode-toggle">
+        <label class="switch">
+          <input type="checkbox" id="modeToggle" onclick="toggleMode()" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <!--  Display -->
       <input type="text" id="display" disabled />
+
+      <!-- Button Number and Button Operator -->
       <div class="buttons">
         <div class="buttonLayout">
           <button onclick="clearDisplay()" class="generalOp1">AC</button>
@@ -36,6 +52,7 @@
         </div>
       </div>
     </div>  
+
     <script src="js/app.js"></script>
   </body>
 </html>

@@ -53,3 +53,18 @@ function evaluateExpression(expression) {
   // Panggil fungsi evaluate dan kembalikan hasilnya
   return evaluate();
 }
+
+function toggleMode() {
+  var calculator = document.querySelector('.calculator');
+  var display = document.getElementById('display');
+
+  if (document.body.classList.contains('dark-mode')) {
+    document.body.classList.remove('dark-mode');
+    calculator.classList.remove('dark-mode');
+    display.classList.remove('dark-mode');
+  } else {
+    document.body.classList.add('dark-mode');
+    calculator.classList.add('dark-mode');
+    display.classList.add('dark-mode');
+  }
+}

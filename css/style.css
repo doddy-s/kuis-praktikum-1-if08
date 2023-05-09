@@ -11,14 +11,94 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.calculator {
+
+/* styling container for calculator */
+/* Light Mode */
+.calculator { 
   width: 300px;
   padding: 10px;
-  background-color: #292D36;
+  background-color: #F9F9F9;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Dark Mode */
+.dark-mode .calculator {
+  background-color: #292D36;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* styling swicth dark mode and light mode  */
+/* Light Mode */
+.mode-toggle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: yellow;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Dark Mode */
+input:checked + .slider {
+  background-color: #2F2555;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.dark-mode .slider {
+  background-color: #777;
+}
+
+.dark-mode .slider:before {
+  background-color: white;
+}
+
+/* styling display */
+/* Light Mode */
 #display {
   width: 100%;
   height: 70px;
@@ -27,17 +107,22 @@ body{
   text-align: right;
   border: none;
   border-radius: 10px;
-  background-color: #22252D;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 10px;
   box-sizing: border-box;
 }
 
+/* Dark Mode */
+.dark-mode #display {
+  background-color: #22252D;
+  color: #f5f5f5;
+}
+
+/* styling grid all button */
 .buttons{
   display: flex;
-  text-align: center;
   justify-content: center;
-
 }
 
 .buttonLayout {
@@ -46,64 +131,59 @@ body{
   width: 13.5rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(5, minmax(0, 1fr));
+  
+}
+
+
+/* styling each Button */
+/* Light Mode */
+.generalBtn,
+.generalOp1,
+.generalOp2{
+  display: flex;
+  background-color: #EBEBEB;
+  transition-duration: 100ms;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  border: none;
 }
 
 .generalBtn {
-  display: flex;
-  background-color: #272B33;
-  transition-duration: 100ms;
-  color: white;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.75rem;
-  border-width: 2px;
+  color: black;
 }
-
 .generalOp1{
-  display: flex;
-  background-color: #272B33;
-  transition-duration: 100ms;
   color: #26C2A9;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.75rem;
-  border-width: 2px;
 }
-
 .generalOp2{
-  display: flex;
-  background-color: #272B33;
-  transition-duration: 100ms;
   color: orange;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.75rem;
-  border-width: 2px;
 }
 
-.generalBtn:hover {
-  background-color: #000000;
+.generalBtn:hover,
+.generalOp1:hover,
+.generalOp2:hover {
+  background-color: #888;
   color: #ffffff;
 }
 
-.generalOp1:hover{
-  background-color: #000000;
-  color: #ffffff;
+/* Dark Mode */
+.dark-mode .generalBtn{
+  color: white;
 }
 
-.generalOp2:hover{
-  background-color: #000000;
-  color: #ffffff;
+.dark-mode .generalBtn,
+.dark-mode .generalOp1,
+.dark-mode .generalOp2 {
+  background-color: #272B33;
 }
+
+.dark-mode .generalBtn:hover,
+.dark-mode .generalOp1:hover,
+.dark-mode .generalOp2:hover {
+  background-color: #888;
+}
+
