@@ -10,6 +10,7 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* styling container for calculator */
@@ -20,12 +21,14 @@ body{
   background-color: #F9F9F9;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* Dark Mode */
 .dark-mode .calculator {
   background-color: #292D36;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* styling swicth dark mode and light mode  */
@@ -111,12 +114,14 @@ input:checked + .slider:before {
   color: black;
   padding: 10px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* Dark Mode */
 .dark-mode #display {
   background-color: #22252D;
   color: #f5f5f5;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* styling grid all button */
@@ -151,6 +156,7 @@ input:checked + .slider:before {
   height: 3rem;
   border-radius: 0.75rem;
   border: none;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .generalBtn {
@@ -179,6 +185,7 @@ input:checked + .slider:before {
 .dark-mode .generalOp1,
 .dark-mode .generalOp2 {
   background-color: #272B33;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .dark-mode .generalBtn:hover,
