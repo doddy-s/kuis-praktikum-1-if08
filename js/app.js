@@ -5,16 +5,36 @@ function addToDisplay(value) {
   document.getElementById('display').value = displayValue;
 }
 
-function clearDisplay() {
+function addToDisplayOp(value) {
+  displayValue1 = displayValue + value;
+  document.getElementById('display1').value = displayValue1;
   displayValue = '';
   document.getElementById('display').value = '';
 }
 
+function clearDisplay() {
+  displayValue = '';
+  document.getElementById('display').value = '';
+  displayValue1 = '';
+  document.getElementById('display1').value = '';
+}
+
+function perCent() {
+  const persen = displayValue/100;
+  displayValue = persen;
+  document.getElementById('display').value = displayValue;
+}
+
 function calculate() {
+  displayValue1 += displayValue;
+  const history = document.getElementById('display').value;
+  document.getElementById('display1').value = displayValue1;
+  displayValue = '';
+  document.getElementById('display').value = '';
   try {
-    const result = evaluateExpression(displayValue);
-    document.getElementById('display').value = result;
-    displayValue = result.toString();
+    const result = evaluateExpression(displayValue1);
+    document.getElementById('display1').value = result;
+    displayValue1 = result.toString();
   } catch (error) {
     // Tangani kesalahan jika terjadi (misalnya, ekspresi tidak valid)
     console.log('Error:', error);
